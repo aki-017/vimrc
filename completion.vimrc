@@ -37,16 +37,16 @@ let g:neocomplcache_max_list = 20
 let g:neocomplcache_dictionary_filetype_lists = {
     \ 'default'    : '',
     \ 'vimshell'   : $HOME.'/.vimshell_hist',
-    \ 'scala'      : $HOME.'/dotfiles/.vim/bundle/vim-scala/dict/scala.dict',
-    \ 'java'       : $HOME.'/dotfiles/.vim/dict/java.dict',
-    \ 'c'          : $HOME.'/dotfiles/.vim/dict/c.dict',
-    \ 'cpp'        : $HOME.'/dotfiles/.vim/dict/cpp.dict',
-    \ 'javascript' : $HOME.'/dotfiles/.vim/dict/javascript.dict',
-    \ 'ocaml'      : $HOME.'/dotfiles/.vim/dict/ocaml.dict',
-    \ 'perl'       : $HOME.'/dotfiles/.vim/dict/perl.dict',
-    \ 'php'        : $HOME.'/dotfiles/.vim/dict/php.dict',
-    \ 'scheme'     : $HOME.'/dotfiles/.vim/dict/scheme.dict',
-    \ 'vm'         : $HOME.'/dotfiles/.vim/dict/vim.dict'
+    \ 'scala'      : $HOME.'/dotfiles/.neobundle/vim-scala/dict/scala.dict',
+    \ 'java'       : $HOME.'/dotfiles/vimrc/dict/java.dict',
+    \ 'c'          : $HOME.'/dotfiles/vimrc/dict/c.dict',
+    \ 'cpp'        : $HOME.'/dotfiles/vimrc/dict/cpp.dict',
+    \ 'javascript' : $HOME.'/dotfiles/vimrc/dict/javascript.dict',
+    \ 'ocaml'      : $HOME.'/dotfiles/vimrc/dict/ocaml.dict',
+    \ 'perl'       : $HOME.'/dotfiles/vimrc/dict/perl.dict',
+    \ 'php'        : $HOME.'/dotfiles/vimrc/dict/php.dict',
+    \ 'scheme'     : $HOME.'/dotfiles/vimrc/dict/scheme.dict',
+    \ 'vm'         : $HOME.'/dotfiles/vimrc/dict/vim.dict'
     \ }
 
 " Define keyword.
