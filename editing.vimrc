@@ -52,8 +52,10 @@ inoremap <expr> ,dt strftime('%H:%M:%S')
 
 " foldは各FiltTypeにお任せる {{{
 set foldmethod=syntax
+set nofoldenable
 " .vimはmarker
 autocmd FileType vim :set foldmethod=marker
+autocmd FileType vim :set foldenable
 " }}}
 
 " <leader>json でJSONをformat
