@@ -310,6 +310,7 @@ autocmd BufReadPost *_spec.rb call RSpecQuickrun()
 let g:syntastic_enable_signs = 1
 " 可能ならhighligt表示する
 let g:syntastic_enable_highlighting = 1
+let g:syntastic_always_populate_loc_list=1
 "}}}
 
 " toggle.vim"{{{
