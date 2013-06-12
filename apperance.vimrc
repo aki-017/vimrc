@@ -1,10 +1,24 @@
+" Color Scheme {{{
+" 256色
+set t_Co=256
+set t_Sf=[3%dm
+set t_Sb=[4%dm
+" Set the color scheme.
+colorscheme yuroyoro256
+
+" }}}
+
 set showmatch
 set number
 set list
 set listchars=tab:>.,trail:_,extends:>,precedes:<
+
 set display=uhex
-highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
-match ZenkakuSpace /　/
+augroup highlightIdegraphicSpace
+    autocmd! highlightIdegraphicSpace
+    autocmd Colorscheme * highlight ZenkakuSpace cterm=underline ctermbg=lightblue guibg=darkgray
+    autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
+augroup END
 
 set cursorline
 augroup cch
@@ -21,14 +35,5 @@ set lazyredraw
 set ttyfast
 syntax enable
 
-" Color Scheme {{{
-" 256色
-set t_Co=256
-set t_Sf=[3%dm
-set t_Sb=[4%dm
-" Set the color scheme.
-colorscheme yuroyoro256
-
-" }}}
 
 

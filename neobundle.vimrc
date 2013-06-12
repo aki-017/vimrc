@@ -65,6 +65,9 @@ NeoBundle 'choplin/unite-vim_hacks'
 NeoBundle 'yuroyoro/yuroyoro256.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'aki-017/unite-unity'
+NeoBundle 'aki-017/vim-unity'
+NeoBundle 'kchmck/vim-coffee-script'
 
 filetype plugin on
 filetype indent on

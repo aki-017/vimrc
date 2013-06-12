@@ -96,15 +96,8 @@ let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_start_level = 1
 let g:indent_guides_guide_size = 4
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=grey15 ctermbg=233
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=grey30 ctermbg=234
-if 'dark' == &background
-    hi IndentGuidesOdd  ctermbg=black
-    hi IndentGuidesEven ctermbg=darkgrey
-else
-    hi IndentGuidesOdd  ctermbg=white
-    hi IndentGuidesEven ctermbg=lightgrey
-endif
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=grey15 ctermbg=233 ctermfg=234
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=grey30 ctermbg=235 ctermfg=234
 "}}}
 
 " gundo.Vim"{{{
@@ -252,6 +245,9 @@ nnoremap <silent> [unite]rv  :<C-u>Unite -no-split rails/view<CR>
 nnoremap <silent> [unite]rl  :<C-u>Unite -no-split rails/lib<CR>
 nnoremap <silent> [unite]rj  :<C-u>Unite -no-split rails/javascript<CR>
 nnoremap <silent> [unite]rs  :<C-u>Unite -no-split rails/spec<CR>
+
+" from unite-unity
+nnoremap <silent> [unite]pc  :<C-u>Unite -no-split unity/class<CR>
 "}}}
 
 autocmd FileType unite call s:unite_my_settings()
@@ -321,4 +317,6 @@ vmap <C-A> <Plug>ToggleV
 let g:toggle_pairs = { 'and':'or', 'or':'and', 'if':'unless', 'unless':'if', 'yes':'no', 'no':'yes', 'enable':'disable', 'disable':'enable', 'pick':'reword', 'reword':'fixup', 'fixup':'squash', 'squash':'edit', 'edit':'exec', 'exec':'pick' }
 "}}}
 
-let g:octopress_path = '~/Dropbox/octopress'
+" vim-coffee-script"{{{
+autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
+"}}}
