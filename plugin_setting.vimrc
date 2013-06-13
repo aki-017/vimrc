@@ -318,5 +318,6 @@ let g:toggle_pairs = { 'and':'or', 'or':'and', 'if':'unless', 'unless':'if', 'ye
 "}}}
 
 " vim-coffee-script"{{{
-autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
+" 自動コンパイルはいらないかなって
+" autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
 "}}}
