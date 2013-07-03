@@ -50,7 +50,6 @@ NeoBundle 'tpope/vim-rails'
 NeoBundle 'taglist.vim'
 NeoBundle 'errormarker.vim'
 NeoBundle 'DumbBuf'
-NeoBundle 'minibufexpl.vim'
 NeoBundle 'The-NERD-tree'
 NeoBundle 'banyan/recognize_charcode.vim'
 NeoBundle 'vim-jp/vimdoc-ja'
@@ -68,6 +67,14 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'aki-017/unite-unity'
 NeoBundle 'aki-017/vim-unity'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundleLazy 'nosami/Omnisharp', {
+\   'autoload': {'filetypes': ['cs']},
+\   'build': {
+\     'windows': 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"',
+\     'mac': 'xbuild server/OmniSharp.sln',
+\     'unix': 'xbuild server/OmniSharp.sln',
+\   }
+\ }
 
 filetype plugin on
 filetype indent on

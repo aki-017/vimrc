@@ -5,20 +5,6 @@
 nmap ,y ;YRShow<CR>
 "}}}
 
-" MiniBufExplorer"{{{
-"set minibfexp
-let g:miniBufExplMapWindowNavVim=1 "hjklで移動
-let g:miniBufExplSplitBelow=0  " Put new window above
-let g:miniBufExplMapWindowNavArrows=1
-let g:miniBufExplMapCTabSwitchBufs=1
-let g:miniBufExplModSelTarget=1
-let g:miniBufExplSplitToEdge=1
-let g:miniBufExplMaxSize = 10
-
-":MtでMiniBufExplorerの表示トグル
-command! Mt :TMiniBufExplorer
-"}}}
-
 " Align"{{{
 " Alignを日本語環境で使用するための設定
 let g:Align_xstrlen = 3
@@ -270,7 +256,19 @@ function! s:unite_my_settings()"{{{
   " ウィンドウを縦に分割して開く
   nnoremap <silent> <buffer> <expr> <C-v> unite#do_action('vsplit')
   inoremap <silent> <buffer> <expr> <C-v> unite#do_action('vsplit')
-endfunction"}}}
+endfunction
+
+let g:unite_source_grep_command = 'ag'
+let g:unite_source_grep_default_opts = '--nocolor --nogroup'
+let g:unite_source_grep_recursive_opt = ''
+let g:unite_source_grep_max_candidates = 200
+ 
+" unite-grepのキーマップ
+" 選択した文字列をunite-grep
+" https://github.com/shingokatsushima/dotfiles/blob/master/.vimrc
+vnoremap /g y:Unite grep::-iRn:<C-R>=escape(@", '\\.*$^[]')<CR><CR>
+
+"}}}
 
 let g:unite_source_file_mru_limit = 200
 
@@ -320,4 +318,16 @@ let g:toggle_pairs = { 'and':'or', 'or':'and', 'if':'unless', 'unless':'if', 'ye
 " vim-coffee-script"{{{
 " 自動コンパイルはいらないかなって
 " autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
+"}}}
+
+" OmniSharp "{{{ 
+nnoremap <silent> mc :OmniSharpFindSyntaxErrors<CR>
+nnoremap <silent> mf :OmniSharpCodeFormat<CR>
+nnoremap <silent> md :OmniSharpGotoDefinition<CR>
+nnoremap <silent> <C-w>md <C-w>s:OmniSharpGotoDefinition<CR>
+nnoremap <silent> mi :OmniSharpFindImplementations<CR>
+nnoremap <silent> mr :OmniSharpRename<CR>
+nnoremap <silent> mt :OmniSharpTypeLookup<CR>
+nnoremap <silent> mu :OmniSharpFindUsages<CR>
+nnoremap <silent> mx :OmniSharpGetCodeActions<CR>
 "}}}
