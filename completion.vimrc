@@ -66,7 +66,12 @@ inoremap <expr><C-g>     neocomplcache#undo_completion()
 " 補完候補の共通部分までを補完する
 inoremap <expr><C-s> neocomplcache#complete_common_string()
 " SuperTab like snippets behavior.
-imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
 " C-kを押すと行末まで削除
 " inoremap <C-k> <C-o>D
 " C-nでneocomplcache補完

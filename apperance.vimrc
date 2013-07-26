@@ -11,7 +11,7 @@ colorscheme yuroyoro256
 set showmatch
 set number
 set list
-set listchars=tab:>-,trail:_,extends:>,precedes:<
+set listchars=tab:⮁⮁,trail:_,extends:>,precedes:<
 
 set display=uhex
 augroup highlightIdegraphicSpace
