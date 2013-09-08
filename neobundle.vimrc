@@ -64,8 +64,7 @@ NeoBundle 'choplin/unite-vim_hacks'
 NeoBundle 'yuroyoro/yuroyoro256.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'aki-017/unite-unity'
-NeoBundle 'aki-017/vim-unity'
+NeoBundle 'aki017/unite-unity'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundleLazy 'nosami/Omnisharp', {
 \   'autoload': {'filetypes': ['cs']},
@@ -75,6 +74,7 @@ NeoBundleLazy 'nosami/Omnisharp', {
 \     'unix': 'xbuild server/OmniSharp.sln',
 \   }
 \ }
+NeoBundle 'wavded/vim-stylus'
 
 filetype plugin on
 filetype indent on
