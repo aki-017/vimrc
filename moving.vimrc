@@ -44,6 +44,13 @@ map <F4> <ESC>:bnext \| bdelete #<CR>
 command! Bw :bnext \| bdelete #
 "}}}
 
+" F5で前のTab, F6で次のTab, F7でTabを削除する"{{{
+map <F5> <ESC>:tabnext<CR>
+map <F6> <ESC>:tabprevious<CR>
+map <F7> <ESC>:tabclose<CR>
+"}}}
+
+
 "フレームサイズを怠惰に変更する"{{{
 map <kPlus> <C-W>+
 map <kMinus> <C-W>-
