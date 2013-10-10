@@ -103,8 +103,8 @@ let Tlist_Auto_Open = 0                   " 自動表示
 let Tlist_Auto_Update = 1
 let Tlist_WinWidth = 30
 "map <silent> <leader>tl :Tlist<CR>        " taglistを開くショットカットキー
-nmap <F7> :CMiniBufExplorer<CR>:TrinityToggleTagList<CR>:TMiniBufExplorer<CR>
-nmap <Leader>tl :CMiniBufExplorer<CR>:TrinityToggleTagList<CR>:TMiniBufExplorer<CR>
+nmap <F7> :TrinityToggleTagList<CR>
+nmap <Leader>tl :TrinityToggleTagList<CR>
 "}}}
 
 " Srcexp"{{{
@@ -343,5 +343,9 @@ let g:airline_right_alt_sep = '⮃'
 let g:airline_symbols.branch = '⭠'
 let g:airline_symbols.readonly = '⭤'
 let g:airline_symbols.linenr = '⭡'
+let g:airline#extensions#tabline#left_sep = '⮀'
+let g:airline#extensions#tabline#left_alt_sep = '⮁'
+let g:airline#extensions#tabline#right_sep = '⮂'
+let g:airline#extensions#tabline#right_alt_sep = '⮃'
 "}}}
 "

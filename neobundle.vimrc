@@ -75,6 +75,12 @@ NeoBundleLazy 'nosami/Omnisharp', {
 \   }
 \ }
 NeoBundle 'wavded/vim-stylus'
+NeoBundleLazy 'othree/html5.vim', {
+\   'autoload': {'filetypes': ['html', 'erb', 'htm']}
+\ }
+NeoBundleLazy 'digitaltoad/vim-jade', {
+\   'autoload': {'filetypes': ['jade']}
+\ }
 
 filetype plugin on
 filetype indent on

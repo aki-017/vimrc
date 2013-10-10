@@ -33,13 +33,13 @@ noremap <Space>k <C-b>
 "}}}
 
 " spaceで次のbufferへ。back-spaceで前のbufferへ"{{{
-nmap <Space><Space> ;MBEbn<CR>
-nmap <BS><BS> ;MBEbp<CR>
+nmap <Space><Space> :bn<CR>
+nmap <BS><BS> :bp<CR>
 "}}}
 
 " F2で前のバッファ, F3で次のバッファ, F4でバッファを削除する"{{{
-map <F2> <ESC>;bp<CR>
-map <F3> <ESC>;bn<CR>
+map <F2> <ESC>:bp<CR>
+map <F3> <ESC>:bn<CR>
 map <F4> <ESC>:bnext \| bdelete #<CR>
 command! Bw :bnext \| bdelete #
 "}}}
@@ -118,3 +118,14 @@ endfunction"}}}
 
 " insert mode でjjでesc
 inoremap jj <Esc>
+
+" なんかむかついた
+map <UP> <ESC>
+imap <UP> <ESC>
+map <DOWN> <ESC>
+imap <DOWN> <ESC>
+map <LEFT> <ESC>
+imap <LEFT> <ESC>
+map <RIGHT> <ESC>
+imap <RIGHT> <ESC>
+
