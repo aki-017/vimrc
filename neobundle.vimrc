@@ -9,6 +9,7 @@ endif
 
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimshell'
@@ -65,6 +66,7 @@ NeoBundle 'yuroyoro/yuroyoro256.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'aki017/unite-unity'
+NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundleLazy 'nosami/Omnisharp', {
 \   'autoload': {'filetypes': ['cs']},
