@@ -24,12 +24,6 @@ map <Leader>x, c<space>
 let NERDShutUp=1
 "}}}
 
-" grep.vim"{{{
-" 検索外のディレクトリ、ファイルパターン
-let Grep_Skip_Dirs = '.svn .git .hg'
-let Grep_Skip_Files = '*.bak *~'
-"}}}
-
 " surround.vim"{{{
 " s, ssで選択範囲を指定文字でくくる
 nmap s <Plug>Ysurround
@@ -60,20 +54,6 @@ let g:treeExplVertical=1
 noremap <Leader>t<Space> :VSTreeExplore<CR>
 "分割したウィンドウのサイズ
 let g:treeExplWinSize=30
-"}}}
-
-" DumbBuf.vim"{{{
-"<Leader>b<Space>でBufferList
-let dumbbuf_hotkey = '<Leader>b<Space>'
-let dumbbuf_mappings = {
-    \ 'n': {
-        \'<Esc>': { 'opt': '<silent>', 'mapto': ':<C-u>close<CR>' }
-    \}
-\}
-let dumbbuf_single_key  = 1
-let dumbbuf_updatetime  = 1    " &updatetimeの最小値
-let dumbbuf_wrap_cursor = 0
-let dumbbuf_remove_marked_when_close = 1
 "}}}
 
 " vim-indent-guides"{{{
@@ -116,32 +96,6 @@ let g:SrcExpl_RefreshMapKey = "<Space>" " 手動表示のMAP
 let g:SrcExpl_GoBackMapKey  = "<C-b>"   " 戻る機能のMAP
 " Source Explorerの機能ON/OFF
 " nmap <F8> :CMiniBufExplorer<CR>:SrcExplToggle<CR>:TMiniBufExplorer<CR>
-"}}}
-
-" sumartword.vim"{{{
-noremap ,w  w
-noremap ,b  b
-noremap ,e  e
-noremap ,ge  ge
-
-map W  <Plug>(smartword-w)
-map B  <Plug>(smartword-b)
-map E  <Plug>(smartword-e)
-map ge  <Plug>(smartword-ge)
-"}}}
-
-" camelcasemotion.vim"{{{
-" <Shift-wbe>でCameCaseやsnake_case単位での単語移動
-map <silent> w <Plug>CamelCaseMotion_w
-map <silent> b <Plug>CamelCaseMotion_b
-map <silent> e <Plug>CamelCaseMotion_e
-" text-objectで使用できるように
-omap <silent> iw <Plug>CamelCaseMotion_iw
-xmap <silent> iw <Plug>CamelCaseMotion_iw
-omap <silent> ib <Plug>CamelCaseMotion_ib
-xmap <silent> ib <Plug>CamelCaseMotion_ib
-omap <silent> ie <Plug>CamelCaseMotion_ie
-xmap <silent> ie <Plug>CamelCaseMotion_ie
 "}}}
 
 " errormarker.vim"{{{
