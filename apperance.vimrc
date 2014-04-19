@@ -12,6 +12,7 @@ set showmatch
 set number
 set list
 set listchars=tab:⮁⮁,trail:_,extends:>,precedes:<
+autocmd ColorScheme * hi SpecialKey term=underline guifg=grey15 ctermfg=233
 
 set display=uhex
 augroup highlightIdegraphicSpace
