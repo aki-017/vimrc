@@ -4,7 +4,7 @@ filetype off
 if has('vim_starting')
   set runtimepath+=~/.neobundle/neobundle.vim/
 
-  call neobundle#rc(expand('~/.neobundle'))
+  call neobundle#begin(expand('~/.neobundle'))
 endif
 
 NeoBundle 'Shougo/neocomplcache'
@@ -79,6 +79,11 @@ NeoBundleLazy 'othree/html5.vim', {
 NeoBundleLazy 'digitaltoad/vim-jade', {
 \   'autoload': {'filetypes': ['jade']}
 \ }
+
+
+if has('vim_starting')
+  call neobundle#end()
+endif
 
 filetype plugin on
 filetype indent on
