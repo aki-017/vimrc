@@ -130,34 +130,34 @@ else
   call vimshell#set_execute_file('tbz,bz2', 'bzcat')
 endif
 
-function! g:my_chpwd(args, context)
-  call vimshell#execute('echo "chpwd"')
-endfunction
-function! g:my_emptycmd(cmdline, context)
-  call vimshell#execute('echo "emptycmd"')
-  return a:cmdline
-endfunction
-function! g:my_preprompt(args, context)
-  call vimshell#execute('echo "preprompt"')
-endfunction
-function! g:my_preexec(cmdline, context)
-  call vimshell#execute('echo "preexec"')
+" function! g:my_chpwd(args, context)
+  " call vimshell#execute('echo "chpwd"')
+" endfunction
+" function! g:my_emptycmd(cmdline, context)
+  " call vimshell#execute('echo "emptycmd"')
+  " return a:cmdline
+" endfunction
+" function! g:my_preprompt(args, context)
+  " call vimshell#execute('echo "preprompt"')
+" endfunction
+" function! g:my_preexec(cmdline, context)
+  " call vimshell#execute('echo "preexec"')
 
-  if a:cmdline =~# '^\s*diff\>'
-    call vimshell#set_syntax('diff')
-  endif
-  return a:cmdline
-endfunction
+  " if a:cmdline =~# '^\s*diff\>'
+    " call vimshell#set_syntax('diff')
+  " endif
+  " return a:cmdline
+" endfunction
 
 autocmd FileType vimshell
 \ call vimshell#altercmd#define('g', 'git')
 \| call vimshell#altercmd#define('i', 'iexe')
 \| call vimshell#altercmd#define('l', 'll')
 \| call vimshell#altercmd#define('ll', 'ls -l')
-\| call vimshell#hook#set('chpwd', ['g:my_chpwd'])
-\| call vimshell#hook#set('emptycmd', ['g:my_emptycmd'])
-\| call vimshell#hook#set('preprompt', ['g:my_preprompt'])
-\| call vimshell#hook#set('preexec', ['g:my_preexec'])
+" \| call vimshell#hook#set('chpwd', ['g:my_chpwd'])
+" \| call vimshell#hook#set('emptycmd', ['g:my_emptycmd'])
+" \| call vimshell#hook#set('preprompt', ['g:my_preprompt'])
+" \| call vimshell#hook#set('preexec', ['g:my_preexec'])
 
 command! Vs :VimShell
 "}}}
