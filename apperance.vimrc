@@ -11,7 +11,7 @@ colorscheme yuroyoro256
 set showmatch
 set number
 set list
-set listchars=tab:⮁⮁,trail:_,extends:>,precedes:<
+set listchars=tab:\ >,trail:_,extends:>,precedes:\ 
 autocmd ColorScheme * hi SpecialKey term=underline guifg=grey15 ctermfg=233
 
 set display=uhex
@@ -28,13 +28,9 @@ autocmd WinLeave * set nocursorline
 autocmd WinEnter,BufRead * set cursorline
 augroup END
 
-highlight clear CursorLine
-highlight CursorLine gui=underline
-highlight CursorLine ctermbg=black guibg=black
-
 set lazyredraw
 set ttyfast
 syntax enable
 
-
-
+" hi clear CursorLine
+hi CursorLine gui=underline cterm=none
