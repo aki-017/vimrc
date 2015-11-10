@@ -33,7 +33,8 @@ set ttymouse=xterm2
 
 " OSのクリップボードを使用する
 "ヤンクした文字は、システムのクリップボードに入れる"
-set clipboard=unnamed
+set clipboard=unnamedplus
+
 " 挿入モードでCtrl+pを押すとクリップボードの内容を貼り付けられるようにする "
 imap <C-p>  <ESC>"*pa
 
