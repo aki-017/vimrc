@@ -64,14 +64,6 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'aki017/unite-unity'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'kchmck/vim-coffee-script'
-NeoBundleLazy 'nosami/Omnisharp', {
-\   'autoload': {'filetypes': ['cs']},
-\   'build': {
-\     'windows': 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"',
-\     'mac': 'xbuild server/OmniSharp.sln',
-\     'unix': 'xbuild server/OmniSharp.sln',
-\   }
-\ }
 NeoBundle 'wavded/vim-stylus'
 NeoBundleLazy 'othree/html5.vim', {
 \   'autoload': {'filetypes': ['html', 'erb', 'htm']}

@@ -281,18 +281,6 @@ let g:toggle_pairs = { 'and':'or', 'or':'and', 'if':'unless', 'unless':'if', 'ye
 " autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
 "}}}
 
-" OmniSharp "{{{ 
-nnoremap <silent> mc :OmniSharpFindSyntaxErrors<CR>
-nnoremap <silent> mf :OmniSharpCodeFormat<CR>
-nnoremap <silent> md :OmniSharpGotoDefinition<CR>
-nnoremap <silent> <C-w>md <C-w>s:OmniSharpGotoDefinition<CR>
-nnoremap <silent> mi :OmniSharpFindImplementations<CR>
-nnoremap <silent> mr :OmniSharpRename<CR>
-nnoremap <silent> mt :OmniSharpTypeLookup<CR>
-nnoremap <silent> mu :OmniSharpFindUsages<CR>
-nnoremap <silent> mx :OmniSharpGetCodeActions<CR>
-"}}}
-
 " airline "{{{
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t:.'
