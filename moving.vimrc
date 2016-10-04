@@ -15,11 +15,6 @@ nmap 0 ^
 nmap 9 $
 " }}}
 
-" insert mode での移動"{{{
-inoremap  <C-e> <END>
-inoremap  <C-a> <HOME>
-"}}}
-
 " インサートモードでもhjklで移動（Ctrl押すけどね）"{{{
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
@@ -40,16 +35,11 @@ nmap <BS><BS> :bp<CR>
 " F2で前のバッファ, F3で次のバッファ, F4でバッファを削除する"{{{
 map <F2> <ESC>:bp<CR>
 map <F3> <ESC>:bn<CR>
+map <Left> <ESC>:bp<CR>
+map <Right> <ESC>:bn<CR>
 map <F4> <ESC>:bnext \| bdelete #<CR>
 command! Bw :bnext \| bdelete #
 "}}}
-
-" F5で前のTab, F6で次のTab, F7でTabを削除する"{{{
-map <F5> <ESC>:tabnext<CR>
-map <F6> <ESC>:tabprevious<CR>
-map <F7> <ESC>:tabclose<CR>
-"}}}
-
 
 "フレームサイズを怠惰に変更する"{{{
 map <kPlus> <C-W>+
@@ -57,32 +47,15 @@ map <kMinus> <C-W>-
 "}}}
 
 " 前回終了したカーソル行に移動
-autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
-
-" 最後に編集された位置に移動"{{{
-nnoremap gb '[
-nnoremap gp ']
-"}}}
+autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 " 対応する括弧に移動"{{{
 nnoremap ( %
 nnoremap ) %
 "}}}
 
-" 最後に変更されたテキストを選択する"{{{
-nnoremap gc  `[v`]
-vnoremap gc <C-u>normal gc<Enter>
-onoremap gc <C-u>normal gc<Enter>
-"}}}
-
-" カーソル位置の単語をyankする
-nnoremap vy vawy
-
 " 矩形選択で自由に移動する
 set virtualedit+=block
-
-"ビジュアルモード時vで行末まで選択
-vnoremap v $h
 
 " CTRL-hjklでウィンドウ移動"{{{
 nnoremap <C-j> <C-w>j
@@ -91,41 +64,6 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
 "}}}
 
-" git-diff-aware version of gf commands.
-" http://labs.timedia.co.jp/2011/04/git-diff-aware-gf-commands-for-vim.html
-nnoremap <expr> gf  <SID>do_git_diff_aware_gf('gf')
-nnoremap <expr> gF  <SID>do_git_diff_aware_gf('gF')
-nnoremap <expr> <C-w>f  <SID>do_git_diff_aware_gf('<C-w>f')
-nnoremap <expr> <C-w><C-f>  <SID>do_git_diff_aware_gf('<C-w><C-f>')
-nnoremap <expr> <C-w>F  <SID>do_git_diff_aware_gf('<C-w>F')
-nnoremap <expr> <C-w>gf  <SID>do_git_diff_aware_gf('<C-w>gf')
-nnoremap <expr> <C-w>gF  <SID>do_git_diff_aware_gf('<C-w>gF')
-
-function! s:do_git_diff_aware_gf(command)"{{{
-  let target_path = expand('<cfile>')
-  if target_path =~# '^[ab]/'  " with a peculiar prefix of git-diff(1)?
-    if filereadable(target_path) || isdirectory(target_path)
-      return a:command
-    else
-      " BUGS: Side effect - Cursor position is changed.
-      let [_, c] = searchpos('\f\+', 'cenW')
-      return c . '|' . 'v' . (len(target_path) - 2 - 1) . 'h' . a:command
-    endif
-  else
-    return a:command
-  endif
-endfunction"}}}
-
 " insert mode でjjでesc
 inoremap jj <Esc>
-
-" なんかむかついた
-map <UP> <ESC>
-imap <UP> <ESC>
-map <DOWN> <ESC>
-imap <DOWN> <ESC>
-map <LEFT> <ESC>
-imap <LEFT> <ESC>
-map <RIGHT> <ESC>
-imap <RIGHT> <ESC>
 

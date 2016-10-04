@@ -7,29 +7,13 @@ set hlsearch   " 検索文字をハイライト
 "Escの2回押しでハイライト消去
 nmap <ESC><ESC> ;nohlsearch<CR><ESC>
 
-"選択した文字列を検索
-vnoremap <silent> // y/<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
-"選択した文字列を置換
-vnoremap /r "xy;%s/<C-R>=escape(@x, '\\/.*$^~[]')<CR>//gc<Left><Left><Left>
-
-"s*置換後文字列/g<Cr>でカーソル下のキーワードを置換
-nnoremap <expr> s* ':%substitute/\<' . expand('<cword>') . '\>/'
-
 " :Gb <args> でGrepBufferする
 command! -nargs=1 Gb :GrepBuffer <args>
 " カーソル下の単語をGrepBufferする
 nnoremap <C-g><C-b> :<C-u>GrepBuffer<Space><C-r><C-w><Enter>
 
-" :Gr <args>でカレントディレクトリ以下を再帰的にgrepする
-command! -nargs=1 Gr :Rgrep <args> *<Enter><CR>
-" カーソル下の単語をgrepする
-nnoremap <silent> <C-g><C-r> :<C-u>Rgrep<Space><C-r><C-w> *<Enter><CR>
-
 " grep検索
 nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
-
-" カーソル位置の単語をgrep検索
-nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
 
 let Grep_Skip_Dirs = '.svn .git'
 let Grep_Skip_Files = '*.bak *~'

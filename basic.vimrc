@@ -14,7 +14,6 @@ set whichwrap=b,s,h,l,<,>,[,]    " カーソルを行頭、行末で止まらな
 set showcmd                      " コマンドをステータス行に表示
 set showmode                     " 現在のモードを表示
 set viminfo='50,<1000,s100,\"50  " viminfoファイルの設定
-set nocompatible
 imap OA <Up>
 imap OB <Down>
 imap OC <Right>
@@ -28,21 +27,10 @@ imap [OD <Left>
 " ターミナルでマウスを使用できるようにする {{{
 set mouse=a
 set guioptions+=a
-set ttymouse=xterm2
 "}}}
-
-" OSのクリップボードを使用する
-"ヤンクした文字は、システムのクリップボードに入れる"
-set clipboard=unnamedplus
 
 " 挿入モードでCtrl+pを押すとクリップボードの内容を貼り付けられるようにする "
 imap <C-p>  <ESC>"*pa
-
-" Ev/Rvでvimrcの編集と反映
-command! Ev edit $MYVIMRC
-command! Rv source $MYVIMRC
-
-set helpfile=$VIMRUNTIME/doc/help.txt
 
 " ファイルタイプ判定をon
 filetype plugin on
