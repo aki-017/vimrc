@@ -1,6 +1,7 @@
 if &compatible
   set nocompatible
 endif
+let g:loaded_ruby_provider = 1
 set runtimepath+=$HOME/repo/github.com/Shougo/dein.vim
 
 call dein#begin("$HOME/.config/nvim")
@@ -20,9 +21,9 @@ call dein#add('nathanaelkane/vim-indent-guides')
 call dein#add('sjl/gundo.vim')
 call dein#add('neomake/neomake')
 
-
-" call dein#add('Shougo/neocomplete.vim')
 call dein#end()
+
+set runtimepath+=$HOME/repo/github.com/aki017/denite-rails.vim
 
 if dein#check_install()
   call dein#install()

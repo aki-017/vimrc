@@ -10,6 +10,7 @@ inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 " Tabキーを空白に変換
 set expandtab
 
+set clipboard+=unnamedplus
 " y0 y9で行頭 行末までヤンク {{{
 nmap y9 y$
 nmap y0 y^
@@ -21,7 +22,7 @@ nmap y0 y^
 " autocmd BufWritePre * :%s/\t/  /ge
 
 " foldは各FiltTypeにお任せる {{{
-set foldmethod=syntax
+" set foldmethod=syntax
 set nofoldenable
 " .vimはmarker
 autocmd FileType vim :set foldmethod=marker
