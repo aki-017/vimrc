@@ -23,7 +23,7 @@ call dein#add('neomake/neomake')
 
 call dein#end()
 
-set runtimepath+=$HOME/repo/github.com/aki017/denite-rails.vim
+set runtimepath+=$HOME/repo/github.com/aki017/denite-rails.nvim
 
 if dein#check_install()
   call dein#install()
