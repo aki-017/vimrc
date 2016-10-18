@@ -78,4 +78,9 @@ let g:airline#extensions#tabline#right_sep = ''
 let g:airline#extensions#tabline#right_alt_sep = ''
 "}}}
 
+let g:deoplete#enable_at_startup = 1
+let g:monster#completion#rcodetools#backend = "async_rct_complete"
+let g:deoplete#sources#omni#input_patterns = {
+\   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
+\}
 " autocmd! BufWritePost,BufEnter * Neomake

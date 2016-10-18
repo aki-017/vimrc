@@ -20,6 +20,9 @@ call dein#add('tpope/vim-surround')
 call dein#add('nathanaelkane/vim-indent-guides')
 call dein#add('sjl/gundo.vim')
 call dein#add('neomake/neomake')
+call dein#add('Shougo/deoplete.nvim')
+call dein#add('osyo-manga/vim-monster')
+call dein#add('Shougo/vimproc')
 
 call dein#end()
 
