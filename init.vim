@@ -24,6 +24,9 @@ call dein#add('Shougo/deoplete.nvim')
 call dein#add('osyo-manga/vim-monster')
 call dein#add('Shougo/vimproc')
 
+" js
+call dein#add('othree/yajs.vim')
+
 call dein#end()
 
 set runtimepath+=$HOME/repo/github.com/aki017/denite-rails.nvim
