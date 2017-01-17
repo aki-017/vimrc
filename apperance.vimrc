@@ -4,7 +4,7 @@ set t_Co=256
 set t_Sf=[3%dm
 set t_Sb=[4%dm
 " Set the color scheme.
-colorscheme yuroyoro256
+" colorscheme molokai
 
 " }}}
 
