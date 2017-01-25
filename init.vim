@@ -14,7 +14,6 @@ call dein#add('vim-airline/vim-airline')
 call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 call dein#add('LeafCage/yankround.vim')
 call dein#add('mrkn/mrkn256.vim')
-colorscheme mrkn256
 call dein#add('junegunn/vim-easy-align')
 call dein#add('scrooloose/nerdcommenter')
 call dein#add('tpope/vim-surround')

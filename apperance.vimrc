@@ -5,6 +5,7 @@ set t_Sf=[3%dm
 set t_Sb=[4%dm
 " Set the color scheme.
 " colorscheme molokai
+colorscheme mrkn256
 
 " }}}
 
@@ -34,3 +35,4 @@ syntax enable
 
 " hi clear CursorLine
 hi CursorLine gui=underline cterm=none
+hi Search cterm=reverse ctermfg=66 ctermbg=222 gui=reverse guifg=#708090 guibg=#f0e68c
