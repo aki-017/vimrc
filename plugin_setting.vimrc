@@ -66,13 +66,16 @@ nnoremap <silent> fu  :<C-u>Denite file_mru:file_rec<CR>
 nnoremap <silent> fg  :<C-u>Denite grep<CR>
 nnoremap <silent> fy  :<C-u>Denite neoyank<CR>
 
-nnoremap <silent> frm  :<C-u>Denite rails_model<CR>
-nnoremap <silent> frc  :<C-u>Denite rails_controller<CR>
-nnoremap <silent> frv  :<C-u>Denite rails_view<CR>
-nnoremap <silent> frl  :<C-u>Denite rails_lib<CR>
-nnoremap <silent> frj  :<C-u>Denite rails_javascript<CR>
-nnoremap <silent> frs  :<C-u>Denite rails_stylesheet<CR>
-
+function! Rails(path)
+  let dir = finddir("app" , getcwd().";")."/../".a:path
+  execute "Denite file_rec:".fnamemodify(dir, ":p")
+endfunc
+nnoremap <silent> frm  :<C-u>call Rails("app/models")<CR>
+nnoremap <silent> frc  :<C-u>call Rails("app/controllers")<CR>
+nnoremap <silent> frv  :<C-u>call Rails("app/views")<CR>
+nnoremap <silent> frl  :<C-u>call Rails("lib")<CR>
+nnoremap <silent> frj  :<C-u>call Rails("app/assets/javascripts")<CR>
+nnoremap <silent> frs  :<C-u>call Rails("app/assets/stylesheets")<CR>
 "}}}
 
 " airline "{{{
