@@ -22,7 +22,7 @@ call dein#add('sjl/gundo.vim')
 call dein#add('neomake/neomake')
 call dein#add('Shougo/deoplete.nvim')
 " call dein#add('osyo-manga/vim-monster')
-call dein#add('Shougo/deoplete-rct')
+" call dein#add('Shougo/deoplete-rct')
 call dein#add('Shougo/vimproc')
 
 " js
