@@ -47,18 +47,19 @@ nmap U :<C-u>GundoToggle<CR>
 
 " denite.nvim"{{{
 
-	call denite#custom#map(
-	      \ 'insert',
-	      \ '<C-n>',
-	      \ '<denite:move_to_next_line>',
-	      \ 'noremap'
-	      \)
-	call denite#custom#map(
-	      \ 'insert',
-	      \ '<C-p>',
-	      \ '<denite:move_to_previous_line>',
-	      \ 'noremap'
-	      \)
+call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+call denite#custom#map(
+      \ 'insert',
+      \ '<C-n>',
+      \ '<denite:move_to_next_line>',
+      \ 'noremap'
+      \)
+call denite#custom#map(
+      \ 'insert',
+      \ '<C-p>',
+      \ '<denite:move_to_previous_line>',
+      \ 'noremap'
+      \)
 
 nnoremap <silent> ff  :<C-u>Denite file_rec<CR>
 nnoremap <silent> fl  :<C-u>Denite line<CR>
