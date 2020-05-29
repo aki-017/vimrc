@@ -1,36 +1,42 @@
 if &compatible
   set nocompatible
 endif
-let g:loaded_ruby_provider = 1
+
 set runtimepath+=$HOME/repo/github.com/Shougo/dein.vim
 
-call dein#begin("$HOME/.config/nvim")
+if dein#load_state('$HOME/.config/nvim')
+  call dein#begin("$HOME/.config/nvim")
 
-call dein#add('Shougo/dein.vim')
-call dein#add('Shougo/neomru.vim')
-call dein#add('Shougo/neoyank.vim')
-call dein#add('Shougo/denite.nvim')
-call dein#add('vim-airline/vim-airline')
-call dein#add('Shougo/vimproc.vim', {'build': 'make'})
-call dein#add('LeafCage/yankround.vim')
-call dein#add('mrkn/mrkn256.vim')
-call dein#add('junegunn/vim-easy-align')
-call dein#add('scrooloose/nerdcommenter')
-call dein#add('tpope/vim-surround')
-call dein#add('nathanaelkane/vim-indent-guides')
-call dein#add('sjl/gundo.vim')
-call dein#add('neomake/neomake')
-call dein#add('Shougo/deoplete.nvim')
-" call dein#add('osyo-manga/vim-monster')
-" call dein#add('Shougo/deoplete-rct')
-call dein#add('Shougo/vimproc')
+  call dein#add('Shougo/dein.vim')
+  call dein#add('Shougo/neomru.vim')
+  call dein#add('Shougo/neoyank.vim')
+  call dein#add('Shougo/denite.nvim')
+  call dein#add('vim-airline/vim-airline')
+  call dein#add('Shougo/vimproc.vim', {'build': 'make'})
+  call dein#add('LeafCage/yankround.vim')
+  call dein#add('mrkn/mrkn256.vim')
+  call dein#add('junegunn/vim-easy-align')
+  call dein#add('scrooloose/nerdcommenter')
+  call dein#add('tpope/vim-surround')
+  call dein#add('nathanaelkane/vim-indent-guides')
+  call dein#add('sjl/gundo.vim')
+  call dein#add('neomake/neomake')
+  call dein#add('Shougo/deoplete.nvim')
 
-" js
-call dein#add('othree/yajs.vim')
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
+  " call dein#add('osyo-manga/vim-monster')
+  " call dein#add('Shougo/deoplete-rct')
+  call dein#add('Shougo/vimproc')
 
-call dein#end()
+  " js
+  call dein#add('othree/yajs.vim')
 
-set runtimepath+=$HOME/repo/github.com/aki017/denite-rails.nvim
+  call dein#end()
+  call dein#save_state()
+endif
 
 if dein#check_install()
   call dein#install()
